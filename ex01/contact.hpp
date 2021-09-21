@@ -11,6 +11,10 @@ private :
 	std::string	nickname;
 	std::string	phonenumber;
 	std::string	darkestsecret;
+public :
+	void		add();
+	void		display();
+	std::string	to_print(std::string str);
 };
 
 

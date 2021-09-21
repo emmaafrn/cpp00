@@ -9,10 +9,10 @@ int		main()
 	std::string buff;
 	while (1)
 	{
-		std::cout << "ADD, SEARCH or EXIT ? :";
+		std::cout << "ADD, SEARCH or EXIT ? : ";
 		std::cin >> buff;
 		if (!buff.compare("ADD"))
-			PhoneBook.add(&PhoneBook);
+			PhoneBook.add();
 		else if (!buff.compare("SEARCH"))
 		{
 			PhoneBook.display();

@@ -1,20 +1,41 @@
 #include "PhoneBook.hpp"
 #include "contact.hpp"
 
-void	PhoneBook::add(PhoneBook *PhoneBook)
+PhoneBook::PhoneBook()
 {
-	int		i;
-	contact	contact;
+	count = 0;
+}
 
-	i = 0;
-	std::cout << "Fist name :";
-	
-	std::cout << "Last name :";
+void	PhoneBook::add()
+{
+	contacts_tab[count].add();
+	count++;
+	return ;
+}
 
-	std::cout << "Nick name :";
+void	PhoneBook::display()
+{
+	int	i = 0;
 
-	std::cout << "Phone number :";
+	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+	while (i < count)
+	{
+		contacts_tab[i].display();
+		i++;
+	}	
+}
 
-	std::cout << "Darkest secret :";
+void	PhoneBook::search()
+{
+	int	num;
 
+	std::cout << "Select a contact number :";
+	std::cin >> num;
+	if (num < count)
+		contacts_tab[num].display();
+}
+
+void	PhoneBook::exit()
+{
+	exit();
 }

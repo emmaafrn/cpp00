@@ -6,8 +6,10 @@
 class PhoneBook {
 private:
 	contact	contacts_tab[8];
+	int		count;
 public:
-	void	add(PhoneBook *PhoneBook);
+		PhoneBook();
+	void	add();
 	void	display();
 	void	search();
 	void	exit();
