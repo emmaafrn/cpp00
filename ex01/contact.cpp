@@ -3,15 +3,15 @@
 void	contact::add()
 {
 	std::cout << "First name : ";
-	std::cin >> firstname;
+	std::getline(std::cin, firstname);
 	std::cout << "Last name : ";
-	std::cin >> lastname;
+	std::getline(std::cin, lastname);
 	std::cout << "Nick name : ";
-	std::cin >> nickname;
+	std::getline(std::cin, nickname);
 	std::cout << "Phone number : ";
-	std::cin >> phonenumber;
+	std::getline(std::cin, phonenumber);
 	std::cout << "Darkest secret : ";
-	std::cin >> darkestsecret;
+	std::getline(std::cin, darkestsecret);
 }
 
 std::string	contact::to_print(std::string str)
@@ -23,7 +23,7 @@ std::string	contact::to_print(std::string str)
 	if (length > 10)
 	{
 		tmp = str.substr(0, 9);
-		tmp.insert(8, ".");
+		tmp.insert(9, ".");
 	}
 	else
 	{

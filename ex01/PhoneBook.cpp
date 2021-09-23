@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 #include "contact.hpp"
+#include <stdlib.h>
 
 PhoneBook::PhoneBook()
 {
@@ -8,6 +9,11 @@ PhoneBook::PhoneBook()
 
 void	PhoneBook::add()
 {
+	if (count == 8)
+	{
+		std::cout << "Error, already too many contacts";
+		return ;
+	}
 	contacts_tab[count].add();
 	count++;
 	return ;
@@ -28,14 +34,15 @@ void	PhoneBook::display()
 void	PhoneBook::search()
 {
 	int	num;
-
+	std::string input;
 	std::cout << "Select a contact number :";
-	std::cin >> num;
-	if (num < count)
+	std::getline(std::cin, input);
+	num = stoi(input);
+	if (num > 0 && num < count + 1)
 		contacts_tab[num].display();
 }
 
 void	PhoneBook::exit()
 {
-	exit();
+	std::exit(0);
 }
