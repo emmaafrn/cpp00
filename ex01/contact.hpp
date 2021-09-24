@@ -12,8 +12,9 @@ private :
 	std::string	phonenumber;
 	std::string	darkestsecret;
 public :
+	contact();
 	void		add();
-	void		display();
+	void		display(int index);
 	std::string	to_print(std::string str);
 };
 

@@ -11,7 +11,7 @@ void	PhoneBook::add()
 {
 	if (count == 8)
 	{
-		std::cout << "Error, already too many contacts";
+		std::cout << "Error, already too many contacts" << std::endl;
 		return ;
 	}
 	contacts_tab[count].add();
@@ -26,7 +26,7 @@ void	PhoneBook::display()
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	while (i < count)
 	{
-		contacts_tab[i].display();
+		contacts_tab[i].display(i + 1);
 		i++;
 	}	
 }
@@ -35,11 +35,18 @@ void	PhoneBook::search()
 {
 	int	num;
 	std::string input;
-	std::cout << "Select a contact number :";
+
+	if (count == 0)
+		return ;
+	std::cout << "Select a contact number : ";
 	std::getline(std::cin, input);
-	num = stoi(input);
-	if (num > 0 && num < count + 1)
-		contacts_tab[num].display();
+	if (std::cin.eof() == 1)
+		std::exit(0);
+	num = stoi(input) - 1;
+	if (num >= 0 && num < count)
+		contacts_tab[num].display(num + 1);
+	else
+		std::cout << "Error, number isn't correct !" << std::endl;
 }
 
 void	PhoneBook::exit()

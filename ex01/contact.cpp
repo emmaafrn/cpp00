@@ -1,17 +1,30 @@
 #include "contact.hpp"
 
+contact::contact()
+{}
+
 void	contact::add()
 {
 	std::cout << "First name : ";
-	std::getline(std::cin, firstname);
+	std::getline (std::cin, firstname);
+	if (std::cin.eof() == 1)
+		std::exit(0);
 	std::cout << "Last name : ";
 	std::getline(std::cin, lastname);
+	if (std::cin.eof() == 1)
+		std::exit(0);
 	std::cout << "Nick name : ";
 	std::getline(std::cin, nickname);
+	if (std::cin.eof() == 1)
+		std::exit(0);
 	std::cout << "Phone number : ";
 	std::getline(std::cin, phonenumber);
+	if (std::cin.eof() == 1)
+		std::exit(0);
 	std::cout << "Darkest secret : ";
 	std::getline(std::cin, darkestsecret);
+	if (std::cin.eof() == 1)
+		std::exit(0);
 }
 
 std::string	contact::to_print(std::string str)
@@ -37,7 +50,7 @@ std::string	contact::to_print(std::string str)
 	return (tmp);
 }
 
-void	contact::display()
+void	contact::display(int index)
 {
-	std::cout << "|         " << &index << "|" << to_print(firstname) << "|" << to_print(lastname) << "|" << to_print(nickname) << "|" << std::endl;
+	std::cout << "|         " << index << "|" << to_print(firstname) << "|" << to_print(lastname) << "|" << to_print(nickname) << "|" << std::endl;
 }
