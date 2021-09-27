@@ -1,10 +1,10 @@
-NAME = 
+NAME = accounts_things
 
-SRCS = 
+SRCS = Account.cpp tests.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-INC = 
+INC = Account.hpp
 
 CC  = g++
 
